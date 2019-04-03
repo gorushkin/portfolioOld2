@@ -15,8 +15,8 @@
 
 .work__item {
   display: block;
-  width: 350px;
-  height: 350px;
+  width: 330px;
+  height: 320px;
   border-radius: 5px;
   border: 1px solid #ffffff;
   margin-bottom: 50px;
@@ -43,6 +43,16 @@
 
   &--mishka {
     background: url("../img/mishka.jpg");
+    background-size: cover;
+  }
+
+  &--kekstagram {
+    background: url("../img/kekstagram.jpg");
+    background-size: cover;
+  }
+
+  &--panteon {
+    background: url("../img/panteon.jpg");
     background-size: cover;
   }
 }
