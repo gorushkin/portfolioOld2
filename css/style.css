@@ -353,8 +353,8 @@ header {
 
 .work__item {
   display: block;
-  width: 350px;
-  height: 350px;
+  width: 330px;
+  height: 320px;
   border-radius: 5px;
   border: 1px solid #ffffff;
   margin-bottom: 50px; }
@@ -372,6 +372,12 @@ header {
     background-size: cover; }
   .work__item--mishka {
     background: url("../img/mishka.jpg");
+    background-size: cover; }
+  .work__item--kekstagram {
+    background: url("../img/kekstagram.jpg");
+    background-size: cover; }
+  .work__item--panteon {
+    background: url("../img/panteon.jpg");
     background-size: cover; }
 
 .work__link {
