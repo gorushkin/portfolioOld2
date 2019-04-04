@@ -5,15 +5,20 @@ var sass = require("gulp-sass");
 var del = require('del');
 var server = require("browser-sync").create();
 var plumber = require("gulp-plumber");
-
+var imagemin = require("gulp-imagemin");
 
 function refresh (done) {
   server.reload();
   done()
 };
 
+
 function clean () {
   return del("build")
+};
+
+function newClean () {
+  return del("source/img")
 };
 
 function copy () {
@@ -23,11 +28,21 @@ function copy () {
     'source/img/**',
     'source/fonts/**',
     "source/pp/**"
-   ], {
+  ], {
     base: 'source'
   })
   .pipe(gulp.dest('build'))
 };
+
+function images () {
+  return gulp.src("source/bigimg/**/*.{jpg,svg, png}")
+  .pipe(imagemin([
+    imagemin.optipng({optimizationLevel: 6}),
+    imagemin.jpegtran({progressive: true}),
+    imagemin.svgo()
+    ]))
+  .pipe(gulp.dest("source/img"))
+}
 
 function css () {
   return gulp.src('source/sass/style.scss')
@@ -56,6 +71,8 @@ gulp.task('build',
     gulp.parallel(css, copy)
   )
 );
+
+gulp.task("images", gulp.series(newClean, images));
 
 gulp.task('watch', watch);
 gulp.task("start", gulp.series('build', watch));
