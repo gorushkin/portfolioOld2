@@ -41,6 +41,7 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   /* 1 */
   height: 0;
@@ -75,6 +76,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   /* 2 */ }
 
@@ -207,6 +209,7 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   color: inherit;
@@ -238,6 +241,7 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -313,6 +317,7 @@ body {
   font-family: "Work Sans", sans-serif; }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 a {
@@ -347,8 +352,13 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly; }
 
 .work__item {
@@ -358,13 +368,18 @@ header {
   border-radius: 5px;
   border: 1px solid #ffffff;
   margin-bottom: 50px;
+  -webkit-box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.5); }
   .work__item:hover, .work__item:focus {
+    -webkit-box-shadow: 0 15px 45px 2px rgba(0, 0, 0, 0.8);
     box-shadow: 0 15px 45px 2px rgba(0, 0, 0, 0.8);
     outline: none;
+    -webkit-transform: scale(1.02);
     transform: scale(1.02);
+    -webkit-transition: 0.05s;
     transition: 0.05s; }
   .work__item:active {
+    -webkit-box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.5);
     outline: none; }
   .work__item--nerds {
@@ -405,8 +420,11 @@ header {
   width: 900px; }
 
 .contact__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
+  -ms-flex-pack: distribute;
   justify-content: space-around; }
