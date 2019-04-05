@@ -6,6 +6,7 @@ var del = require('del');
 var server = require("browser-sync").create();
 var plumber = require("gulp-plumber");
 var imagemin = require("gulp-imagemin");
+var autoprefixer = require('gulp-autoprefixer');
 
 function refresh (done) {
   server.reload();
@@ -48,6 +49,10 @@ function css () {
   return gulp.src('source/sass/style.scss')
   .pipe(plumber())
   .pipe(sass())
+  .pipe(autoprefixer({
+    browsers: ['last 2 versions'],
+    cascade: false
+    }))
   .pipe(gulp.dest("build/css"))
   .pipe(server.stream());
 };
@@ -75,4 +80,5 @@ gulp.task('build',
 gulp.task("images", gulp.series(newClean, images));
 
 gulp.task('watch', watch);
+gulp.task('css', css);
 gulp.task("start", gulp.series('build', watch));
