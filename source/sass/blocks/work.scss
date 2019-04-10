@@ -10,7 +10,7 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .work__item {
@@ -85,7 +85,7 @@
 
 @media (max-width: 1200px) {
   .work__list {
-    justify-content: space-around;
+    // justify-content: space-around;
   }
 }
 
@@ -98,7 +98,6 @@
     border-radius: 0;
     width: 100%;
     margin-bottom: 15px;
-    // border-bottom: 15px solid #000000;
 
     &:hover,
     &:focus {

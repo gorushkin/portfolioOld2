@@ -32,5 +32,12 @@
 @media (max-width: 800px) {
   .footer .wrapper {
     width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact__list {
+    flex-direction: column;
+    margin: 0 auto;
   }
 }
