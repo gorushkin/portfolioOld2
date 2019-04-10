@@ -13,3 +13,24 @@
   padding: 0;
   justify-content: space-around;
 }
+
+.contactt__item {
+  line-height: 50px;
+
+  &:hover {
+    color: yellowgreen;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .footer .wrapper {
+    width: 600px;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer .wrapper {
+    width: 100%;
+  }
+}

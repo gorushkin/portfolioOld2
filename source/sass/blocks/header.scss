@@ -1,5 +1,4 @@
 header {
-  // height: 100px;
   border-bottom: 2px solid #f55617;
 }
 
@@ -10,5 +9,18 @@ header {
   width: 1280px;
   margin: 0;
   padding: 10px;
-  // background: red;
+}
+
+
+@media (max-width: 1200px) {
+  .main-title {
+    width: 768px;
+  }
+}
+
+@media (max-width: 800px) {
+  .main-title {
+    font-size: 35px;
+    width: 100%;
+  }
 }
