@@ -73,7 +73,6 @@
 
 .work__link {
   display: block;
-  // background: red;
   width: 100%;
   height: 100%;
 }
@@ -83,11 +82,11 @@
   display: none;
 }
 
-@media (max-width: 1200px) {
-  .work__list {
-    // justify-content: space-around;
-  }
-}
+// @media (max-width: 1200px) {
+//   .work__list {
+//     justify-content: space-around;
+//   }
+// }
 
 @media (max-width: 800px) {
   .work__list {
