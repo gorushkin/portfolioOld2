@@ -7,6 +7,8 @@ var server = require("browser-sync").create();
 var plumber = require("gulp-plumber");
 var imagemin = require("gulp-imagemin");
 var autoprefixer = require('gulp-autoprefixer');
+var imageminJpegRecompress = require('imagemin-jpeg-recompress');
+var imageminMozjpeg = require('imagemin-mozjpeg');
 
 function refresh (done) {
   server.reload();
@@ -39,7 +41,9 @@ function images () {
   return gulp.src("source/bigimg/**/*.{jpg,svg, png}")
   .pipe(imagemin([
     imagemin.optipng({optimizationLevel: 6}),
-    imagemin.jpegtran({progressive: true}),
+    // imagemin.jpegtran({progressive: true}),
+    // imageminJpegRecompress({quality: 'low'}),
+    imageminMozjpeg({quality: 50}),
     imagemin.svgo()
     ]))
   .pipe(gulp.dest("source/img"))
