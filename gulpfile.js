@@ -9,6 +9,7 @@ var imagemin = require("gulp-imagemin");
 var autoprefixer = require('gulp-autoprefixer');
 var imageminJpegRecompress = require('imagemin-jpeg-recompress');
 var imageminMozjpeg = require('imagemin-mozjpeg');
+var webp = require("gulp-webp");
 
 function refresh (done) {
   server.reload();
@@ -49,6 +50,12 @@ function images () {
   .pipe(gulp.dest("source/img"))
 }
 
+function webpConvert () {
+  return gulp.src("source/bigimg/**/*.{jpg, png}")
+  .pipe(webp())
+  .pipe(gulp.dest("source/img"));
+}
+
 function css () {
   return gulp.src('source/sass/style.scss')
   .pipe(plumber())
@@ -82,6 +89,7 @@ gulp.task('build',
 );
 
 gulp.task("images", gulp.series(newClean, images));
+gulp.task("webp", gulp.series(webpConvert));
 
 gulp.task('watch', watch);
 gulp.task('css', css);
