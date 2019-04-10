@@ -349,7 +349,7 @@ header {
   font-weight: 900;
   text-align: right;
   margin: 0;
-  padding: 10px; }
+  padding: 10px 0; }
 
 @media (max-width: 1200px) {
   .main-title {
