@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* stylelint-disable */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -329,8 +330,16 @@ img {
   height: auto; }
 
 .wrapper {
-  width: 1280px;
+  width: 1200px;
   margin: 0 auto; }
+
+@media (max-width: 1200px) {
+  .wrapper {
+    width: 768px; } }
+
+@media (max-width: 800px) {
+  .wrapper {
+    width: 100%; } }
 
 header {
   border-bottom: 2px solid #f55617; }
@@ -342,6 +351,15 @@ header {
   width: 1280px;
   margin: 0;
   padding: 10px; }
+
+@media (max-width: 1200px) {
+  .main-title {
+    width: 768px; } }
+
+@media (max-width: 800px) {
+  .main-title {
+    font-size: 35px;
+    width: 100%; } }
 
 .work {
   width: 100%;
@@ -413,6 +431,25 @@ header {
   margin: 0;
   display: none; }
 
+@media (max-width: 1200px) {
+  .work__list {
+    -ms-flex-pack: distribute;
+    justify-content: space-around; } }
+
+@media (max-width: 800px) {
+  .work__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: сolumn;
+    flex-direction: сolumn; }
+  .work__item {
+    border-radius: 0;
+    width: 100%;
+    margin-bottom: 15px; }
+    .work__item:hover, .work__item:focus {
+      -webkit-transform: none;
+      transform: none; } }
+
 .footer {
   min-height: 50px; }
 
@@ -428,3 +465,16 @@ header {
   padding: 0;
   -ms-flex-pack: distribute;
   justify-content: space-around; }
+
+.contactt__item {
+  line-height: 50px; }
+  .contactt__item:hover {
+    color: yellowgreen; }
+
+@media (max-width: 1200px) {
+  .footer .wrapper {
+    width: 600px; } }
+
+@media (max-width: 800px) {
+  .footer .wrapper {
+    width: 100%; } }
